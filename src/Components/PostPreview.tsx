@@ -107,12 +107,12 @@ export default function PostPreview({
       {/* Post data section */}
       <div className="w-full p-2">
         <div className="flex items-center">
-          <Link href={`/topic/${subName}`}>
-            {/* <img
+          {/* <Link href={`/topic/${subName}`}>
+            <img
               src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
               className="w-6 h-6 mr-1 rounded-full cursor-pointer"
-            /> */}
-          </Link>
+            />
+          </Link> */}
           <Link href={`/topic/${subName}`}>
             <a className="text-xs font-bold cursor-pointer hover:underline">
               /topic/{subName}
