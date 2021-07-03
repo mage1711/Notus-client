@@ -6,7 +6,7 @@ import useSWR from 'swr'
 
 import { Post, Sub } from '../../../types'
 
-export default function submit() {
+export default function Submit() {
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
 

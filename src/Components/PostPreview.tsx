@@ -9,7 +9,7 @@ import Axios from 'axios'
 import ActionButton from './ActionButton'
 import { useRouter } from 'next/router'
 import { useAuthState } from '../context/auth'
-
+import Image from 'next/image'
 {/* <div className=""><img className="w-24 rounded md:rounded-lg" src="https://images.pexels.com/photos/4558743/pexels-photo-4558743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/></div> */ }
 dayjs.extend(relativeTime)
 
@@ -96,15 +96,22 @@ export default function PostPreview({
           ></i>
         </div>
       </div>
-      <div className=""><img className="w-24 rounded md:rounded-lg" src="https://images.pexels.com/photos/4558743/pexels-photo-4558743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" /></div>
+      <div className="">
+      <Image
+    src="https://res.cloudinary.com/dvmo50ocz/image/upload/v1625165098/sample.jpg"
+    alt="post image"
+    width={100}
+    height={150}
+  />
+        </div>
       {/* Post data section */}
       <div className="w-full p-2">
         <div className="flex items-center">
           <Link href={`/topic/${subName}`}>
-            <img
+            {/* <img
               src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
               className="w-6 h-6 mr-1 rounded-full cursor-pointer"
-            />
+            /> */}
           </Link>
           <Link href={`/topic/${subName}`}>
             <a className="text-xs font-bold cursor-pointer hover:underline">
