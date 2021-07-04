@@ -6,7 +6,7 @@ import Axios from 'axios'
 import useSWR, { useSWRInfinite } from 'swr'
 import { useAuthState } from "../context/auth"
 
-export default function Home({ posts }) {
+export default function Home() {
   const [observedPost, setObservedPost] = useState('')
 
   // const { data: posts } = useSWR<Post[]>('/post')
@@ -28,7 +28,7 @@ export default function Home({ posts }) {
   } = useSWRInfinite<Post[]>((index) => `/post?page=${index}`)
 
   const isInitialLoading = !data && !error
-  // const posts: Post[] = data ? [].concat(...data) : []
+  const posts: Post[] = data ? [].concat(...data) : []
 
 
   useEffect(() => {
@@ -132,12 +132,12 @@ export default function Home({ posts }) {
   )
 }
 
-export const getServerSideProps = async (context) => {
-  try {
-    const res = await Axios.get('/post')
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   try {
+//     const res = await Axios.get('/posts')
 
-    return { props: { posts: res.data } }
-  } catch (err) {
-    return { props: { error: 'Something went wrong' } }
-  }
-}
+//     return { props: { posts: res.data } }
+//   } catch (err) {
+//     return { props: { error: 'Something went wrong' } }
+//   }
+// }
