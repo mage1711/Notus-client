@@ -25,7 +25,7 @@ export default function Register() {
       const res = await Axios.post('/user/login', {
         email,
         password,
-      })
+      },)
 
       dispatch('LOGIN', res.data)
 

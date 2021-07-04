@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { AuthProvider } from '../context/auth';
 import { SWRConfig } from 'swr'
 
-// Axios.defaults.baseURL = 'http://localhost:8000/api'
+// Axios.defaults.baseURL = 'http://localhost:7000/api'
 Axios.defaults.baseURL = 'https://notus-server-kzvek.ondigitalocean.app/api'
 Axios.defaults.withCredentials = true
 const fetcher = async (url: string) => {
