@@ -3,20 +3,21 @@ import Link from 'next/link'
 
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import classNames from  'classNames'
+
 import { Post } from '../types'
 import Axios from 'axios'
 import ActionButton from './ActionButton'
 import { useRouter } from 'next/router'
 import { useAuthState } from '../context/auth'
 import Image from 'next/image'
-{/* <div className=""><img className="w-24 rounded md:rounded-lg" src="https://images.pexels.com/photos/4558743/pexels-photo-4558743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/></div> */ }
+
 dayjs.extend(relativeTime)
 
 
 interface PostPreviewProps {
   post: Post
   revalidate?: Function
+  key?: string
 }
 export default function PostPreview({
   post: {
