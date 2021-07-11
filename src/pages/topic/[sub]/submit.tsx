@@ -1,9 +1,10 @@
 import Axios from 'axios'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { FormEvent, useState } from 'react'
+import { FormEvent, useState} from 'react'
 import useSWR from 'swr'
-
+import Uploady from "@rpldy/uploady";
+import UploadButton from "@rpldy/upload-button";
 import { Post, Sub } from '../../../types'
 
 export default function Submit() {
@@ -15,7 +16,8 @@ export default function Submit() {
 
     const { data: sub, error } = useSWR<Sub>(subName ? `/subs/${subName}` : null)
     if (error) router.push('/')
-
+    
+      
     const submitPost = async (event: FormEvent) => {
         event.preventDefault()
 
@@ -78,7 +80,14 @@ export default function Submit() {
                         </div>
                     </form>
                 </div>
+                <Uploady
+    destination={{ 
+        url: "cloudinary://661814449754765.YCG2pplXo1wQ8eNXAqgA--RXjH4@dvmo50ocz",
+    }}>
+    <UploadButton/>
+</Uploady>
             </div>
+            
 
         </div>
     )
