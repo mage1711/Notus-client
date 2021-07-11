@@ -8,6 +8,8 @@ export interface Post {
   createdAt: string
   updatedAt: string
   sub?: Sub
+  mediaLink?: string
+  bodyPreview?: string
   // Virtual fields
   url: string
   voteScore?: number
