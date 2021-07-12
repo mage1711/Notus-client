@@ -100,11 +100,7 @@ export default function PostPage() {
                         <div className="container flex">
                             {post && (
                                 <div className="w-8 h-8 mr-2 overflow-hidden rounded-full">
-                                    {/* <Image
-                                        src={post.sub.imageUrl}
-                                        height={(8 * 16) / 4}
-                                        width={(8 * 16) / 4}
-                                    /> */}
+
                                 </div>
                             )}
                             <p className="text-xl font-semibold text-white">/topic/{sub}</p>
@@ -123,27 +119,27 @@ export default function PostPage() {
                                     <div className="flex-shrink-0 w-10 py-2 text-center rounded-l">
                                         {/* Upvote */}
                                         <div
-                                            className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-red-500"
-                                            onClick={() => vote(1)}
-                                        >
-                                            <i
-                                                className={classNames('icon-arrow-up', {
-                                                    'text-red-500': post.userVote === 1,
-                                                })}
-                                            ></i>
-                                        </div>
+   className="text-gray-400 cursor-pointer hover:bg-gray-300 hover:text-red-500"
+   onClick={() => vote(1)}
+ >
+   <i
+     className={classNames('fas fa-arrow-up', {
+       'text-red-500': post.userVote === 1,
+     })}
+    ></i>
+ </div>
                                         <p className="text-xs font-bold">{post.voteScore}</p>
                                         {/* Downvote */}
                                         <div
-                                            className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-blue-600"
-                                            onClick={() => vote(-1)}
-                                        >
-                                            <i
-                                                className={classNames('icon-arrow-down', {
-                                                    'text-blue-600': post.userVote === -1,
-                                                })}
-                                            ></i>
-                                        </div>
+   className="text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-blue-600"
+   onClick={() => vote(-1)}
+ >
+   <i
+     className={classNames('fas fa-arrow-down', {
+       'text-blue-600': post.userVote === -1,
+     })}
+   ></i>
+ </div>
                                     </div>
                                     <div className="py-2 pr-2">
                                         <div className="flex items-center">
@@ -252,7 +248,7 @@ export default function PostPage() {
                                                 onClick={() => vote(1, comment)}
                                             >
                                                 <i
-                                                    className={classNames('icon-arrow-up', {
+                                                    className={classNames('fas fa-arrow-up', {
                                                         'text-red-500': comment.userVote === 1,
                                                     })}
                                                 ></i>
@@ -264,7 +260,7 @@ export default function PostPage() {
                                                 onClick={() => vote(-1, comment)}
                                             >
                                                 <i
-                                                    className={classNames('icon-arrow-down', {
+                                                    className={classNames('fas fa-arrow-down', {
                                                         'text-blue-600': comment.userVote === -1,
                                                     })}
                                                 ></i>
