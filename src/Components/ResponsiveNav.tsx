@@ -209,7 +209,8 @@ const ResponsiveNavBar: React.FC = () => {
                           <Menu.Item>
                             {({ active }) => (
                              (authenticated ? (
-                                <Link href="/login"  onClick={logout}>
+                                 <button onClick={logout}>
+                                <Link href="/login"  >
                               <a
                                 className={classNames(
                                   active ? 'bg-gray-100' : '',
@@ -219,6 +220,7 @@ const ResponsiveNavBar: React.FC = () => {
                              Sign out
                               </a>
                               </Link>
+                              </button>
                               ) : (
                                 <Link href="/register">
                                 <a
