@@ -38,7 +38,7 @@ export default function PostPage() {
     useEffect(() => {
         if (!post) return
         let desc = post.body || post.title
-        desc = desc.substring(0, 158).concat('..') // Hello world..
+        desc = desc.substring(0, 158).concat('..') 
         setDescription(desc)
     }, [post])
 
@@ -165,6 +165,12 @@ export default function PostPage() {
                                         <h1 className="my-1 text-xl font-medium">{post.title}</h1>
                                         {/* Post body */}
                                         <p className="my-3 text-sm">{post.body}</p>
+                                        <Image src={post.mediaLink}
+                                                     width={16}
+                                                        height={16}
+                                         layout="responsive"
+
+                                                    />
                                         {/* Actions */}
                                         <div className="flex">
                                             <Link href={post.url}>
