@@ -1,23 +1,29 @@
 import Axios from 'axios'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { FormEvent, useState} from 'react'
+import { FormEvent, useState, useEffect} from 'react'
 import useSWR from 'swr'
-import Uploady from "@rpldy/uploady";
+import Uploady , { useRequestPreSend } from "@rpldy/uploady";
 import UploadButton from "@rpldy/upload-button";
 import { Post, Sub } from '../../../types'
+import Upload from "../../../Components/Upload"
+
 
 export default function Submit() {
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
-
+    const [ mediaURL ,setURL] = useState('')
     const router = useRouter()
+
+
     const { sub: subName } = router.query
 
     const { data: sub, error } = useSWR<Sub>(subName ? `/subs/${subName}` : null)
     if (error) router.push('/')
-    
-      
+
+    useEffect(() => {
+    console.log(mediaURL)
+      }, [mediaURL])
     const submitPost = async (event: FormEvent) => {
         event.preventDefault()
 
@@ -28,6 +34,7 @@ export default function Submit() {
                 title: title.trim(),
                 body,
                 sub: sub.name,
+                mediaLink:mediaURL
             })
 
             router.push(`/topic/${sub.name}/${post.identifier}/${post.slug}`)
@@ -69,23 +76,20 @@ export default function Submit() {
                             placeholder="Text (optional)"
                             rows={4}
                         ></textarea>
-                        <div className="flex justify-end">
+                        <div className="flex justify-end space-x-16">
+                         < Upload setURL={setURL}/>
                             <button
                                 className="px-3 py-1 blue button"
                                 type="submit"
                                 disabled={title.trim().length === 0}
                             >
-                                Submit
+                              submit
                             </button>
+                           
                         </div>
                     </form>
                 </div>
-                <Uploady
-    destination={{ 
-        url: "cloudinary://661814449754765.YCG2pplXo1wQ8eNXAqgA--RXjH4@dvmo50ocz",
-    }}>
-    <UploadButton/>
-</Uploady>
+
             </div>
             
 

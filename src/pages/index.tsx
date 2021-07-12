@@ -11,9 +11,8 @@ export default function Home() {
 
   // const { data: posts } = useSWR<Post[]>('/post')
   // const { data: topSubs } = useSWR<Sub[]>('/misc/top-subs')
-
   const description =
-    "Notus is a network of communities based on people's interests. Find communities you're interested in, and become part of an online community!"
+    "Notus is a network of communities based on student's interests in academia. Find topics you're interested in, and join the learning experince"
   const title = 'Notus'
 
   const { authenticated } = useAuthState()
