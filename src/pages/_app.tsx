@@ -6,6 +6,7 @@ import Axios from 'axios'
 import { useRouter } from 'next/router'
 import { AuthProvider } from '../context/auth';
 import { SWRConfig } from 'swr'
+import ResponsiveNavBar from '../Components/ResponsiveNav'
 
 // Axios.defaults.baseURL = 'http://localhost:7000/api'
 Axios.defaults.baseURL = 'https://notus-server-kzvek.ondigitalocean.app/api'
@@ -30,8 +31,9 @@ function App({ Component, pageProps }: AppProps) {
         dedupingInterval: 10000,
       }}
     >
+
       <AuthProvider>
-        {isNav && <Navbar />}
+        {isNav && <ResponsiveNavBar />}
         <div className={!isNav ? '' : 'pt-12'}>
           <Component {...pageProps} />
         </div>
