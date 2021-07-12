@@ -3,10 +3,11 @@ import { Fragment, useEffect, useState } from 'react'
 import { Sub } from '../types'
 import { useAuthState, useAuthDispatch } from '../context/auth'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import Axios from 'axios'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -25,6 +26,7 @@ const ResponsiveNavBar: React.FC = () => {
     const [timer, setTimer] = useState(null)
     const { authenticated, loading } = useAuthState()
     const dispatch = useAuthDispatch()
+    const router = useRouter()
     const logout = () => {
         Axios.get('/user/logout')
           .then(() => {
