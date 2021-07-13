@@ -53,12 +53,12 @@ import { GetServerSideProps } from 'next'
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {topics.map((topic) => (
-                   <Link href={`/topic/${topic.name}`}>   
-                    <tr key={topic.name} className="cursor-pointer hover:bg-gray-200">
+                   <Link key={topic.name} href={`/topic/${topic.name}`}>   
+                    <tr  className="cursor-pointer hover:bg-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="flex-shrink-0 w-10 h-10">
-                            <Image className="rounded-full" width="40" height="40"   src="https://res.cloudinary.com/dvmo50ocz/image/upload/v1625165098/sample.jpg" alt="topicimage" />
+                            <Image className="rounded-full" width="40" height="40" src="https://res.cloudinary.com/dvmo50ocz/image/upload/v1625165098/sample.jpg" alt="topicimage" />
                           </div>
                           <div className="ml-4">
                             <div className="text-sm font-medium text-gray-900">{topic.name}</div>
