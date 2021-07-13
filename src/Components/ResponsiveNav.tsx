@@ -13,7 +13,7 @@ const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'Topics', href: 'topics', current: false },
   { name: 'popular', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+
 ]
 
 function classNames(...classes) {
