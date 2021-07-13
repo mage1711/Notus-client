@@ -34,7 +34,7 @@ function App({ Component, pageProps }: AppProps) {
 
       <AuthProvider>
         {isNav && <ResponsiveNavBar/>}
-        <div className={!isNav ? '' : 'pt-12'}>
+        <div className={!isNav ? '' : ''}>
           <Component {...pageProps} />
         </div>
       </AuthProvider>

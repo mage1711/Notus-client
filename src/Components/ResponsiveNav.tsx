@@ -10,7 +10,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
+  { name: 'Home', href: '/', current: false },
   { name: 'Topics', href: 'topics', current: false },
   { name: 'popular', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },

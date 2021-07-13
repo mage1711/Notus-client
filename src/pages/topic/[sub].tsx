@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
 import PostPreview from '../../Components/PostPreview'
+import Image from 'next/image'
 
 export default function Sub() {
     const router = useRouter()
@@ -25,7 +26,13 @@ export default function Sub() {
 
     return (
         <div className="">
-            {sub && <div className="p-10 space-y-6">{postsMarkup}</div>}
+    
+            {sub && 
+            
+            <div>
+        <Image src = {sub.imageUrn} width="800" height="200" layout="responsive"/>
+            <div className="text-4xl text-center bg-blue-400"><h1>{sub.name}</h1></div>
+            <div className="p-10 space-y-6"> {postsMarkup}</div></div>}
         </div>
     )
 }
