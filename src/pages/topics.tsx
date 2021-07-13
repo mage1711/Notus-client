@@ -1,6 +1,7 @@
 import Axios from 'axios'
 import Link from 'next/link'
 import Image from 'next/image'
+import { GetServerSideProps } from 'next'
   export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
       const res = await Axios.get('/subs')
