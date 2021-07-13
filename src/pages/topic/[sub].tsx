@@ -17,14 +17,15 @@ export default function Sub() {
     } else if (sub.posts.length === 0) {
         postsMarkup = <p className="text-lg text-center">No posts submitted yet</p>
     } else {
+       
         postsMarkup = sub.posts.map((post) => (
             <PostPreview key={post.identifier} post={post} />
         ))
     }
 
     return (
-        <div className="container flex pt-5">
-            {sub && <div className="w-160">{postsMarkup}</div>}
+        <div className="">
+            {sub && <div className="p-10 space-y-6">{postsMarkup}</div>}
         </div>
     )
 }

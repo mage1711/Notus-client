@@ -1,6 +1,6 @@
 import '../styles/tailwind.css'
 import { AppProps } from 'next/app'
-import Navbar from '../Components/NavBar'
+import NavBar from '../Components/NavBar'
 import Axios from 'axios'
 
 import { useRouter } from 'next/router'
@@ -28,12 +28,12 @@ function App({ Component, pageProps }: AppProps) {
     <SWRConfig
       value={{
         fetcher,
-        dedupingInterval: 10000,
+        dedupingInterval: 8000,
       }}
     >
 
       <AuthProvider>
-        {isNav && <ResponsiveNavBar />}
+        {isNav && <ResponsiveNavBar/>}
         <div className={!isNav ? '' : 'pt-12'}>
           <Component {...pageProps} />
         </div>

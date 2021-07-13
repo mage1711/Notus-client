@@ -10,9 +10,9 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
+  { name: 'Home', href: '/', current: true },
+  { name: 'Topics', href: 'topics', current: false },
+  { name: 'popular', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
 ]
 
@@ -209,9 +209,10 @@ const ResponsiveNavBar: React.FC = () => {
                           <Menu.Item>
                             {({ active }) => (
                              (authenticated ? (
-                                 <button onClick={logout}>
+                           
                                 <Link href="/login"  >
                               <a
+                              onClick={logout}
                                 className={classNames(
                                   active ? 'bg-gray-100' : '',
                                   'block px-4 py-2 text-sm text-gray-700'
@@ -220,7 +221,7 @@ const ResponsiveNavBar: React.FC = () => {
                              Sign out
                               </a>
                               </Link>
-                              </button>
+                     
                               ) : (
                                 <Link href="/register">
                                 <a

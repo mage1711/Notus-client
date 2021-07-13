@@ -69,31 +69,7 @@ export default function PostPreview({
 
 <div className="w-full lg:max-w-full lg:flex"  key={identifier}  id={identifier}>
 
-<div className="w-6 h-full py-3 text-center rounded-l lg:w-12 bg-gray-50 ">
 
-<div
-   className="text-gray-400 cursor-pointer hover:bg-gray-300 hover:text-red-500"
-   onClick={() => vote(1)}
- >
-   <i
-     className={classNames('fas fa-arrow-up', {
-       'text-red-500': userVote === 1,
-     })}
-    ></i>
- </div>
- <p className="text-xs font-bold">{voteScore}</p>
-
- <div
-   className="text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-blue-600"
-   onClick={() => vote(-1)}
- >
-   <i
-     className={classNames('fas fa-arrow-down', {
-       'text-blue-600': userVote === -1,
-     })}
-   ></i>
- </div>
-</div>
       
       <div className="flex-none h-48 overflow-hidden text-center bg-cover rounded-t lg:h-auto lg:w-48 lg:rounded-t-none lg:rounded-l " title="Post Image">
         <Image src={mediaLink}
@@ -103,8 +79,8 @@ export default function PostPreview({
 
  />
       </div>
-      <div className="flex flex-col justify-between p-4 leading-normal bg-white border-b border-l border-r border-gray-400 rounded-b lg:border-l-0 lg:border-t lg:border-gray-400 lg:rounded-b-none lg:rounded-r">
-        <div className="mb-8">
+      <div className="flex flex-col justify-between w-full p-4 leading-normal bg-white border-b border-l border-r border-gray-400 rounded-b lg:border-l-0 lg:border-t lg:border-gray-400 lg:rounded-b-none lg:rounded-r">
+        <div className="mb-2">
          
      
            <Link href={`/topic/${subName}`}>
@@ -124,6 +100,31 @@ export default function PostPreview({
             <p className="text-gray-600">{dayjs(createdAt).fromNow()}</p>
           </div>
         </div>
+        <div className="flex flex-row w-6 h-full py-2 space-x-6 text-center lg:w-12">
+
+<div
+   className="text-gray-400 cursor-pointer hover:bg-gray-300 hover:text-red-500"
+   onClick={() => vote(1)}
+ >
+   <i
+     className={classNames('fas fa-2x fa-arrow-up', {
+       'text-red-500': userVote === 1,
+     })}
+    ></i>
+ </div>
+ <p className="font-bold ">{voteScore}</p>
+
+ <div
+   className="text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-blue-600"
+   onClick={() => vote(-1)}
+ >
+   <i
+     className={classNames('fas fa-2x fa-arrow-down', {
+       'text-blue-600': userVote === -1,
+     })}
+   ></i>
+ </div>
+</div>
       </div>
     </div>
     
