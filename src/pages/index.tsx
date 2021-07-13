@@ -2,7 +2,7 @@ import PostPreview from "../Components/PostPreview"
 import Head from 'next/head'
 import { Fragment, useEffect, useState } from 'react'
 import { Post } from '../types'
-
+import PostPreviewClient from "../Components/PostPreviewClient"
 import { useSWRInfinite } from 'swr'
 import { useAuthState } from "../context/auth"
 
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="p-10 space-y-6">
           {isInitialLoading && <p className="text-lg text-center">Loading..</p>}
           {posts?.map((post) => (
-            <PostPreview
+            <PostPreviewClient
               post={post}
               key={post.identifier}
               revalidate={revalidate}

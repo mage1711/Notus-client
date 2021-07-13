@@ -19,7 +19,7 @@ interface PostPreviewProps {
   revalidate?: Function
   key?: string
 }
-export default function PostPreview({
+export default function PostPreviewClient({
   post: {
     identifier,
     slug,
@@ -72,10 +72,8 @@ export default function PostPreview({
 
       
       <div className="flex-none h-48 overflow-hidden text-center bg-cover rounded-t lg:h-auto lg:w-48 lg:rounded-t-none lg:rounded-l " title="Post Image">
-        <Image src={mediaLink}
-  width={16}
-  height={16}
-  layout="responsive"
+        <img src={mediaLink}
+
 
  />
       </div>

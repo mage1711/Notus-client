@@ -15,13 +15,13 @@ import ActionButton from '../../../../Components/ActionButton'
 dayjs.extend(relativeTime)
 
 export default function PostPage() {
-    // Local state
+
     const [newComment, setNewComment] = useState('')
     const [description, setDescription] = useState('')
-    // Global state
+
     const { authenticated, user } = useAuthState()
 
-    // Utils
+
     const router = useRouter()
     const { identifier, sub, slug } = router.query
 
@@ -43,10 +43,10 @@ export default function PostPage() {
     }, [post])
 
     const vote = async (value: number, comment?: Comment) => {
-        // If not logged in go to login
+        // go to login
         if (!authenticated) router.push('/login')
 
-        // If vote is the same reset vote
+
         if (
             (!comment && value === post.userVote) ||
             (comment && comment.userVote === value)
@@ -275,8 +275,7 @@ export default function PostPage() {
                                                 </Link>
                                                 <span className="text-gray-600">
                                                     {`
-                            ${comment.voteScore}
-                            points •
+                      
                             ${dayjs(comment.createdAt).fromNow()}
                           `}
                                                 </span>
